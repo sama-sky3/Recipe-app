@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">recipe app project</string>
+    <string name="title_home">Home</string>
+    <string name="title_favourite">Favourite</string>
+    <string name="title_search">Search</string>
+    <string name="sign_out">Sign Out</string>
+    <string name="about_us">About Us</string>
+</resources>
