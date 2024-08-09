@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background"
+    tools:context=".Fragment_Activity1.Sign_up_Fragment" >
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/text_email_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/edit_text_email"
+        android:layout_width="407dp"
+        android:layout_height="52dp"
+        android:layout_marginTop="296dp"
+        android:layout_marginEnd="4dp"
+        android:backgroundTint="#D76106"
+        android:drawableStart="@drawable/baseline_email_24"
+        android:hint="@string/Email"
+        android:inputType="textEmailAddress"
+        android:text="@string/Email"
+        android:textColor="@color/brown"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/text_name_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/edit_text_name"
+        android:layout_width="407dp"
+        android:layout_height="49dp"
+        android:layout_marginTop="224dp"
+        android:backgroundTint="#B5340B"
+        android:drawableStart="@drawable/baseline_person_outline_24"
+        android:hint="@string/username"
+        android:inputType="textPersonName"
+        android:password="false"
+        android:text="@string/username"
+        android:textColor="@color/brown"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="Deprecated" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/text_password_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/edit_text_password"
+        android:layout_width="410dp"
+        android:layout_height="57dp"
+        android:layout_marginTop="364dp"
+        android:backgroundTint="#D76106"
+        android:drawableStart="@drawable/baseline_password_24"
+        android:forceHasOverlappingRendering="false"
+        android:hint="@string/password"
+        android:inputType="textPassword"
+        android:password="true"
+        android:scrollbarAlwaysDrawHorizontalTrack="false"
+        android:text="@string/password"
+        android:textColor="@color/brown"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="Deprecated" />
+
+    <Button
+        android:id="@+id/button_signup"
+        android:layout_width="281dp"
+        android:layout_height="54dp"
+        android:layout_marginBottom="102dp"
+        android:background="@drawable/background"
+        android:backgroundTint="@color/lightOrange"
+        android:drawableEnd="@drawable/baseline_assignment_turned_in_24"
+        android:text="@string/Signup"
+        android:textColor="@color/brown"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:cornerRadius="30sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edit_text_password"
+        app:layout_constraintVertical_bias="0.409" />
+
+    <Button
+        android:id="@+id/alreadu_have_account"
+        android:layout_width="281dp"
+        android:layout_height="54dp"
+        android:layout_marginTop="44dp"
+        android:layout_marginEnd="48dp"
+        android:background="@drawable/background"
+        android:backgroundTint="@color/lightOrange"
+        android:text="@string/already_have_an_account"
+        android:textColor="@color/brown"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.802"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button_signup"
+        tools:ignore="TextSizeCheck" />
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/lottie_signup"
+        android:layout_width="410dp"
+        android:layout_height="218dp"
+        android:layout_marginStart="2dp"
+        android:layout_marginEnd="12dp"
+        android:layout_marginBottom="57dp"
+        app:layout_constraintBottom_toTopOf="@+id/edit_text_name"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
+        app:lottie_autoPlay="true"
+        app:lottie_loop="true"
+        app:lottie_rawRes="@raw/orange"
+        tools:ignore="VisualLintBounds,ImageContrastCheck" />
+</androidx.constraintlayout.widget.ConstraintLayout>
