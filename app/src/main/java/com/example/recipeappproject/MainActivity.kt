@@ -5,6 +5,8 @@ import android.view.Menu
 import android.view.MenuItem
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import androidx.appcompat.app.AppCompatActivity
+import androidx.fragment.app.FragmentManager
+import androidx.fragment.app.FragmentTransaction
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupActionBarWithNavController
@@ -12,6 +14,8 @@ import androidx.navigation.ui.setupWithNavController
 import com.example.recipeappproject.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
+    lateinit var  fragmentManger : FragmentManager
+    lateinit var transaction: FragmentTransaction
     private lateinit var binding: ActivityMainBinding
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
@@ -22,13 +26,15 @@ class MainActivity : AppCompatActivity() {
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         super.onOptionsItemSelected(item)
+
+
         when(item.itemId) {
             R.id.sign_out -> {
                 // TODO
                 return true
             }
             R.id.about_us -> {
-                //TODO
+
                 return true
             }
             else -> return false

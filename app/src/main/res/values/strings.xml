@@ -5,4 +5,10 @@
     <string name="title_search">Search</string>
     <string name="sign_out">Sign Out</string>
     <string name="about_us">About Us</string>
+    <string name="search_for_recipes">Search for Recipes....</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="our_app_helps">Our app helps you discover and organize recipes effortlessly. Enjoy personalized recommendations and save your favorites!</string>
+    <string name="our_team">Our Team</string>
+    <string name="contact_us">Contact Us:</string>
 </resources>
