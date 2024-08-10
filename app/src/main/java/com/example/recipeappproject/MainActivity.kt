@@ -1,6 +1,7 @@
 package com.example.recipeappproject
 
 import android.content.Intent
+import android.content.SharedPreferences
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
@@ -19,6 +20,9 @@ import com.example.recipeappproject.databinding.ActivityMainBinding
 class MainActivity : AppCompatActivity() {
     lateinit var  fragmentManger : FragmentManager
     lateinit var transaction: FragmentTransaction
+    val SETTING_PREFRENCE = "com.example.sharedstorageapplication"
+    lateinit var editor : SharedPreferences.Editor
+    lateinit var sharedPreferences: SharedPreferences
     private lateinit var navController: NavController
     private lateinit var binding: ActivityMainBinding
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -57,6 +61,14 @@ class MainActivity : AppCompatActivity() {
                 // TODO cont
                 val intent = Intent(this, AuthActivity::class.java)
                 intent.putExtra("skipSplash", true)
+
+                sharedPreferences =getSharedPreferences(SETTING_PREFRENCE,
+                    MODE_PRIVATE
+                )
+                with(sharedPreferences.edit()) {
+                    clear()
+                    apply()
+                }
                 startActivity(intent)
                 finish()
                 return true
