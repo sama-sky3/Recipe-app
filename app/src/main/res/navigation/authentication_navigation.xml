@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@id/splash_Fragment">
+
+    <fragment
+        android:id="@+id/splash_Fragment"
+        android:name="com.example.recipeappproject.Fragment_Activity1.SplashFragment"
+        android:label="fragment_splash_"
+        tools:layout="@layout/fragment_splash_" >
+        <action
+            android:id="@+id/action_splash_Fragment_to_sign_up_Fragment"
+            app:destination="@id/sign_up_Fragment"
+            app:popUpTo="@id/splash_Fragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/sign_up_Fragment"
+        android:name="com.example.recipeappproject.Fragment_Activity1.SignUpFragment"
+        android:label="fragment_sign_up_"
+        tools:layout="@layout/fragment_sign_up_">
+        <action
+            android:id="@+id/action_sign_up_Fragment_to_sign_in_Fragment"
+            app:destination="@id/sign_in_Fragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/sign_in_Fragment"
+        android:name="com.example.recipeappproject.Fragment_Activity1.SignInFragment"
+        android:label="fragment_sign_in_"
+        tools:layout="@layout/fragment_sign_in_" />
+</navigation>
