@@ -13,12 +13,10 @@ import com.example.recipeappproject.registerDatabaseHelper.DatabaseHelperRegiste
 
 
 
-class sign_in_Fragment : Fragment() {
+class SignInFragment : Fragment() {
 
     private lateinit var binding: FragmentSignInBinding
     private lateinit var databaseHelper: DatabaseHelperRegister
-
-
 
         override fun onCreateView(
             inflater: LayoutInflater, container: ViewGroup?,

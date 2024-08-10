@@ -1,220 +1,208 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:paddingTop="30dp"
-    tools:context=".AboutUsFragment">
+    android:layout_height="match_parent">
 
-
-    <TextView
-        android:id="@+id/text1"
-        android:layout_width="wrap_content"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="@drawable/background"
+        android:paddingTop="30dp"
+        tools:context=".AboutUsFragment">
 
-        android:gravity="center"
-        android:text="@string/about_us"
-        android:textColor="@color/Yellow_100"
-        android:textSize="40sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        <TextView
+            android:id="@+id/text1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@string/about_us"
+            android:textColor="@color/Yellow_100"
+            android:textSize="40sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
+        <TextView
+            android:id="@+id/text2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="30dp"
+            android:text="@string/our_app_helps"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/text1" />
 
-        />
+        <TextView
+            android:id="@+id/text3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/our_team"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/text2" />
 
-    <TextView
-        android:id="@+id/text2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:padding="30dp"
-        android:text="@string/our_app_helps"
-        android:textSize="20sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/text1" />
+        <ImageView
+            android:id="@+id/iv_chef1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:adjustViewBounds="true"
+            android:src="@drawable/chef_"
+            app:layout_constraintEnd_toStartOf="@id/iv_chef2"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/text3"
+            />
 
-    <TextView
-        android:id="@+id/text3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/our_team"
-        android:textSize="20sp"
-        android:textStyle="bold"
-
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/text2" />
-    <ImageView
-        android:id="@+id/iv_chef1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@drawable/chef_"
-        android:adjustViewBounds="true"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toStartOf="@id/iv_chef2"
-        app:layout_constraintTop_toBottomOf="@id/text3"
-
-        />
         <TextView
             android:id="@+id/textView8"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Basmala Mohamed"
-            app:layout_constraintTop_toBottomOf="@id/iv_chef1"
-            app:layout_constraintStart_toStartOf="@id/iv_chef1"
+            android:text="@string/basmala_mohamed"
             app:layout_constraintEnd_toEndOf="@id/iv_chef1"
+            app:layout_constraintStart_toStartOf="@id/iv_chef1"
+            app:layout_constraintTop_toBottomOf="@id/iv_chef1"
+            />
 
+        <ImageView
+            android:id="@+id/iv_chef2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:adjustViewBounds="true"
+            android:src="@drawable/chef_"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/iv_chef1"
+            app:layout_constraintTop_toBottomOf="@id/text3" />
 
-             />
-<ImageView
-    android:id="@+id/iv_chef2"
-
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@drawable/chef_"
-        android:adjustViewBounds="true"
-        app:layout_constraintStart_toEndOf="@id/iv_chef1"
-    app:layout_constraintEnd_toEndOf="parent"
-
-        app:layout_constraintTop_toBottomOf="@id/text3"
-        />
-       <TextView
+        <TextView
             android:id="@+id/textView9"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Aya AbdElmoniem"
-    app:layout_constraintTop_toBottomOf="@id/iv_chef2"
-    app:layout_constraintStart_toStartOf="@id/iv_chef2"
-    app:layout_constraintEnd_toEndOf="@id/iv_chef2"/>
+            app:layout_constraintEnd_toEndOf="@id/iv_chef2"
+            app:layout_constraintStart_toStartOf="@id/iv_chef2"
+            app:layout_constraintTop_toBottomOf="@id/iv_chef2" />
 
-    <ImageView
-        android:id="@+id/iv_chef3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@drawable/chef_"
-        android:adjustViewBounds="true"
-        android:layout_marginTop="20dp"
-      app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/textView8"
-        app:layout_constraintEnd_toStartOf="@id/iv_chef4"
+        <ImageView
+            android:id="@+id/iv_chef3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:adjustViewBounds="true"
+            android:src="@drawable/chef_"
+            app:layout_constraintEnd_toStartOf="@id/iv_chef4"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/textView8"
+            />
 
-        />
-    <TextView
-        android:id="@+id/textView10"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Sama Ahmed"
-        app:layout_constraintTop_toBottomOf="@id/iv_chef3"
-        app:layout_constraintStart_toStartOf="@id/iv_chef3"
-        app:layout_constraintEnd_toEndOf="@id/iv_chef3"
+        <TextView
+            android:id="@+id/textView10"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Sama Ahmed"
+            app:layout_constraintEnd_toEndOf="@id/iv_chef3"
+            app:layout_constraintStart_toStartOf="@id/iv_chef3"
+            app:layout_constraintTop_toBottomOf="@id/iv_chef3"
+            />
 
+        <ImageView
+            android:id="@+id/iv_chef4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:adjustViewBounds="true"
+            android:src="@drawable/chef_"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/iv_chef3"
+            app:layout_constraintTop_toBottomOf="@id/textView9"
+            />
 
-        />
-    <ImageView
-        android:id="@+id/iv_chef4"
+        <TextView
+            android:id="@+id/textView11"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Menna Samy"
+            app:layout_constraintEnd_toEndOf="@id/iv_chef4"
+            app:layout_constraintStart_toStartOf="@id/iv_chef4"
+            app:layout_constraintTop_toBottomOf="@id/iv_chef4"
+            />
 
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@drawable/chef_"
-        android:adjustViewBounds="true"
-        android:layout_marginTop="20dp"
+        <TextView
+            android:id="@+id/text4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="60dp"
+            android:text="@string/contact_us"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/textView11"
+            />
 
-app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@id/iv_chef3"
-        app:layout_constraintTop_toBottomOf="@id/textView9"
+        <ImageButton
+            android:id="@+id/facebook"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:adjustViewBounds="true"
+            android:backgroundTint="@android:color/transparent"
+            android:contentDescription="@string/facebook"
+            android:src="@drawable/icons8_facebook_50"
+            app:layout_constraintBottom_toTopOf="@+id/textView"
+            app:layout_constraintEnd_toStartOf="@+id/insta"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/text4"
+            app:layout_constraintVertical_bias="0.781" />
 
-        />
-    <TextView
-        android:id="@+id/textView11"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Menna Samy"
-        app:layout_constraintTop_toBottomOf="@id/iv_chef4"
-        app:layout_constraintStart_toStartOf="@id/iv_chef4"
-        app:layout_constraintEnd_toEndOf="@id/iv_chef4"
+        <ImageButton
+            android:id="@+id/insta"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:adjustViewBounds="true"
+            android:backgroundTint="@android:color/transparent"
+            android:contentDescription="@string/instagram"
+            android:src="@drawable/icons8_instagram_50"
+            app:layout_constraintBottom_toTopOf="@+id/textView"
+            app:layout_constraintEnd_toStartOf="@+id/linkedin"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/facebook"
+            app:layout_constraintTop_toBottomOf="@+id/text4"
+            app:layout_constraintVertical_bias="0.781" />
 
+        <ImageButton
+            android:id="@+id/linkedin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:adjustViewBounds="true"
+            android:backgroundTint="@android:color/transparent"
+            android:contentDescription="@string/inked_in"
+            android:src="@drawable/icons8_linkedin_50"
+            app:layout_constraintBottom_toTopOf="@+id/textView"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/insta"
+            app:layout_constraintTop_toBottomOf="@+id/text4"
+            app:layout_constraintVertical_bias="0.781" />
 
-        />
-    <TextView
-        android:id="@+id/text4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/contact_us"
-        android:textSize="20dp"
-        android:layout_marginTop="90dp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/textView11"
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            android:padding="10dp"
+            android:text="  © 2024 AKla Sare3a "
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/insta" />
 
-        />
-
-
-
-
-
-    <ImageButton
-        android:id="@+id/facebook"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-
-        android:adjustViewBounds="true"
-
-        android:backgroundTint="@android:color/transparent"
-        android:src="@drawable/icons8_facebook_50"
-        app:layout_constraintBottom_toTopOf="@+id/textView"
-        app:layout_constraintEnd_toStartOf="@+id/insta"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/text4"
-        app:layout_constraintVertical_bias="0.781" />
-
-    <ImageButton
-        android:id="@+id/insta"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:adjustViewBounds="true"
-        android:backgroundTint="@android:color/transparent"
-        android:src="@drawable/icons8_instagram_50"
-        app:layout_constraintBottom_toTopOf="@+id/textView"
-        app:layout_constraintEnd_toStartOf="@+id/linkedin"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/facebook"
-        app:layout_constraintTop_toBottomOf="@+id/text4"
-        app:layout_constraintVertical_bias="0.781" />
-
-    <ImageButton
-        android:id="@+id/linkedin"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:adjustViewBounds="true"
-
-
-        android:backgroundTint="@android:color/transparent"
-        android:src="@drawable/icons8_linkedin_50"
-        app:layout_constraintBottom_toTopOf="@+id/textView"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/insta"
-        app:layout_constraintTop_toBottomOf="@+id/text4"
-        app:layout_constraintVertical_bias="0.781" />
-
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="20dp"
-        android:padding="10dp"
-        android:text="  © 2024 AKla Sare3a "
-        android:textSize="20sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/insta" />
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/background"
-    tools:context=".Fragment_Activity1.Splash_Fragment">
+    tools:context=".Fragment_Activity1.SplashFragment">
 
     <TextView
         android:id="@+id/textView_title"
@@ -18,10 +18,9 @@
         android:textSize="32sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-  android:gravity="center_horizontal"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="TextSizeCheck" />
+       />
 
     <com.airbnb.lottie.LottieAnimationView
         android:id="@+id/lottie"

@@ -12,7 +12,7 @@ import com.example.recipeappproject.databinding.FragmentSignUpBinding
 import com.example.recipeappproject.registerDatabaseHelper.DatabaseHelperRegister
 
 
-class Sign_up_Fragment : Fragment() {
+class SignUpFragment : Fragment() {
 
     private lateinit var binding: FragmentSignUpBinding
     private lateinit var databaseHelper: DatabaseHelperRegister
@@ -24,11 +24,14 @@ class Sign_up_Fragment : Fragment() {
         // Use the binding to inflate the layout
         binding = FragmentSignUpBinding.inflate(inflater, container, false)
 
-        Handler(Looper.getMainLooper()).postDelayed({
-        }, 6000)
-
         databaseHelper = DatabaseHelperRegister(requireContext())
 
+        return binding.root
+    }
+
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
         binding.buttonSignup.setOnClickListener {
             binding.editTextName.text?.clear()
             binding.editTextEmail.text?.clear()
@@ -41,18 +44,17 @@ class Sign_up_Fragment : Fragment() {
             signupDatabase(signupUsername, signupEmail, signupPassword)
         }
 
-        return binding.root
     }
-
     private fun signupDatabase(username: String, email: String, password: String) {
         val insertedRowId = databaseHelper.insertUser(username, email, password)
 
         if (insertedRowId != -1L) {
             Toast.makeText(requireContext(), "Signup Successful", Toast.LENGTH_SHORT).show()
             // Navigate to the home fragment
-           // findNavController().navigate(R.id.action_signUpFragment_to_homeFragment)
+            // findNavController().navigate(R.id.action_signUpFragment_to_homeFragment)
         } else {
             Toast.makeText(requireContext(), "Signup Failed!", Toast.LENGTH_SHORT).show()
         }
     }
+
 }

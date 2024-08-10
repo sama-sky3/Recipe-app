@@ -11,13 +11,7 @@ import androidx.navigation.fragment.findNavController
 import com.example.recipeappproject.R
 
 
-class Splash_Fragment : Fragment() {
-
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-
-    }
+class SplashFragment : Fragment() {
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -31,6 +25,4 @@ class Splash_Fragment : Fragment() {
         },3000)
         return view
     }
-
-
 }

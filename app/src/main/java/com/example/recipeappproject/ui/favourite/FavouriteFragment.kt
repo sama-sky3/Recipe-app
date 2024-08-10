@@ -1,4 +1,4 @@
-package com.example.recipeappproject.ui.dashboard
+package com.example.recipeappproject.ui.favourite
 
 import android.os.Bundle
 import android.view.LayoutInflater

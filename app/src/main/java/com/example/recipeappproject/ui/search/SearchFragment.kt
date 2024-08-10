@@ -1,14 +1,11 @@
-package com.example.recipeappproject.ui.notifications
+package com.example.recipeappproject.ui.search
 
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.SearchView
-import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
-import com.example.recipeappproject.R
 import com.example.recipeappproject.databinding.FragmentSearchBinding
 
 class SearchFragment : Fragment() {

@@ -11,6 +11,7 @@
     <string name="our_app_helps">Our app helps you discover and organize recipes effortlessly. Enjoy personalized recommendations and save your favorites!</string>
     <string name="our_team">Our Team</string>
     <string name="contact_us">Contact Us:</string>
+    <string name="inked_in">click to open our linked in page</string>
     <string name="GirlsRecipe">Girls Recipes</string>
     <string name="todo">TODO</string>
     <string name="tasty_trail">Tasty Trail</string>
@@ -21,4 +22,7 @@
     <string name="Signup">Sign up</string>
     <string name="already_have_an_account">Already have an account</string>
     <string name="Login">Log In</string>
+    <string name="facebook">open facebook page</string>
+    <string name="instagram">open instagram page</string>
+    <string name="basmala_mohamed">Basmala Mohamed</string>
 </resources>

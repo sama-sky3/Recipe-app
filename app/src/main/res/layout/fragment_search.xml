@@ -3,9 +3,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/SearchFragment"
+    android:background="@drawable/background"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.recipeappproject.ui.notifications.SearchFragment">
+    tools:context="com.example.recipeappproject.ui.search.SearchFragment">
 
     <SearchView
         android:id="@+id/search_bar"
@@ -16,7 +17,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_margin="20dp"
         android:queryHint="@string/search_for_recipes"
-android:background="@drawable/search_bar"
+        android:background="@drawable/search_bar"
         android:iconifiedByDefault="false"
         />
 
