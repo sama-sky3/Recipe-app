@@ -6,15 +6,15 @@
     app:startDestination="@id/navigation_home">
     <fragment
         android:id="@+id/navigation_home"
-        android:name="com.example.recipeappproject.ui.home.HomeFragment"
+        android:name="com.example.recipeappproject.HomeFragment"
         android:label="@string/title_home"
         tools:layout="@layout/fragment_home" />
 
     <fragment
         android:id="@+id/navigation_favourite"
-        android:name="com.example.recipeappproject.ui.favourite.FavouriteFragment"
+        android:name="com.example.recipeappproject.FavoriteFragment"
         android:label="@string/title_favourite"
-        tools:layout="@layout/fragment_favourite"/>
+        tools:layout="@layout/fragment_favorite"/>
 
     <fragment
         android:id="@+id/navigation_search"

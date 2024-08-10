@@ -25,4 +25,8 @@
     <string name="facebook">open facebook page</string>
     <string name="instagram">open instagram page</string>
     <string name="basmala_mohamed">Basmala Mohamed</string>
+    <string name="all_recipes">All Recipes</string>
+    <string name="all_categories">All Categories</string>
+    <string name="category_name">Category Name</string>
+    <string name="no_favorites">No Favorites...</string>
 </resources>
