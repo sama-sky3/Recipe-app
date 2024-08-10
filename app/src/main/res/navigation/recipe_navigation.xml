@@ -6,13 +6,13 @@
     app:startDestination="@id/navigation_home">
     <fragment
         android:id="@+id/navigation_home"
-        android:name="com.example.recipeappproject.HomeFragment"
+        android:name="com.example.recipeappproject.ui.home.HomeFragment"
         android:label="@string/title_home"
         tools:layout="@layout/fragment_home" />
 
     <fragment
         android:id="@+id/navigation_favourite"
-        android:name="com.example.recipeappproject.FavoriteFragment"
+        android:name="com.example.recipeappproject.ui.favourite.FavoriteFragment"
         android:label="@string/title_favourite"
         tools:layout="@layout/fragment_favorite"/>
 
@@ -23,7 +23,7 @@
         tools:layout="@layout/fragment_search"/>
     <fragment
         android:id="@+id/aboutUsFragment"
-        android:name="com.example.recipeappproject.AboutUsFragment"
+        android:name="com.example.recipeappproject.ui.AboutUsFragment"
         android:label="AboutUsFragment" />
 
 </navigation>
