@@ -5,4 +5,8 @@
     <string name="title_search">Search</string>
     <string name="sign_out">Sign Out</string>
     <string name="about_us">About Us</string>
+    <string name="all_recipes">All Recipes</string>
+    <string name="all_categories">All Categories</string>
+    <string name="category_name">Category Name</string>
+    <string name="no_favorites">No Favorites...</string>
 </resources>
