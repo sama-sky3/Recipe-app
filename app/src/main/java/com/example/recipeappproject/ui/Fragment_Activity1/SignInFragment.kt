@@ -1,4 +1,4 @@
-package com.example.recipeappproject.Fragment_Activity1
+package com.example.recipeappproject.ui.Fragment_Activity1
 
 import android.content.Intent
 import android.content.SharedPreferences

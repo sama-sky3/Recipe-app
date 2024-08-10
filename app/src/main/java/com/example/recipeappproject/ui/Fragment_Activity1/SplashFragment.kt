@@ -1,4 +1,4 @@
-package com.example.recipeappproject.Fragment_Activity1
+package com.example.recipeappproject.ui.Fragment_Activity1
 
 import android.content.Context.MODE_PRIVATE
 import android.content.Intent

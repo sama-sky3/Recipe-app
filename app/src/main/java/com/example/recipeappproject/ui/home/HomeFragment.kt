@@ -1,4 +1,4 @@
-package com.example.recipeappproject
+package com.example.recipeappproject.ui.home
 
 import android.annotation.SuppressLint
 import android.os.Bundle
@@ -13,8 +13,6 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.recipeappproject.Adapter.HomeAdapterCategories
 import com.example.recipeappproject.Adapter.HomeAdapterRecipes
-import com.example.recipeappproject.Retrofit.MealApi
-import com.example.recipeappproject.ViewModel.HomeViewModel
 import com.example.recipeappproject.R
 
 

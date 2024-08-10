@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/splash_Fragment"
-        android:name="com.example.recipeappproject.Fragment_Activity1.SplashFragment"
+        android:name="com.example.recipeappproject.ui.Fragment_Activity1.SplashFragment"
         android:label="fragment_splash_"
         tools:layout="@layout/fragment_splash_" >
         <action
@@ -18,7 +18,7 @@
     </fragment>
     <fragment
         android:id="@+id/sign_up_Fragment"
-        android:name="com.example.recipeappproject.Fragment_Activity1.SignUpFragment"
+        android:name="com.example.recipeappproject.ui.Fragment_Activity1.SignUpFragment"
         android:label="fragment_sign_up_"
         tools:layout="@layout/fragment_sign_up_">
         <action
@@ -27,7 +27,7 @@
     </fragment>
     <fragment
         android:id="@+id/sign_in_Fragment"
-        android:name="com.example.recipeappproject.Fragment_Activity1.SignInFragment"
+        android:name="com.example.recipeappproject.ui.Fragment_Activity1.SignInFragment"
         android:label="fragment_sign_in_"
         tools:layout="@layout/fragment_sign_in_" />
 </navigation>

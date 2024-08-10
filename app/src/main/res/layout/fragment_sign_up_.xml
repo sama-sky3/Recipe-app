@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/background"
-    tools:context=".Fragment_Activity1.SignUpFragment" >
+    tools:context=".ui.Fragment_Activity1.SignUpFragment" >
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/text_email_layout"
@@ -123,7 +123,7 @@
         android:backgroundTint="@color/Orange_300"
         android:text="@string/already_have_an_account"
         android:textColor="@color/brown"
-        android:textSize="18sp"
+        android:textSize="20sp"
         android:textStyle="bold"
         app:cornerRadius="10dp"
         app:layout_constraintEnd_toEndOf="parent"
