@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -105,7 +106,6 @@
         android:layout_height="54dp"
         android:layout_marginTop="32dp"
         android:backgroundTint="@color/Orange_300"
-        android:drawableEnd="@drawable/baseline_assignment_turned_in_24"
         android:text="@string/Signup"
         android:textColor="@color/brown"
         android:textSize="20sp"
@@ -116,7 +116,7 @@
         app:layout_constraintTop_toBottomOf="@+id/edit_text_password" />
 
     <Button
-        android:id="@+id/alreadu_have_account"
+        android:id="@+id/already_have_account"
         android:layout_width="281dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"

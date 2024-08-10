@@ -1,5 +1,6 @@
 package com.example.recipeappproject.Fragment_Activity1
 
+import android.content.Intent
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
@@ -8,10 +9,9 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import com.example.recipeappproject.MainActivity
 import com.example.recipeappproject.databinding.FragmentSignInBinding
 import com.example.recipeappproject.registerDatabaseHelper.DatabaseHelperRegister
-
-
 
 class SignInFragment : Fragment() {
 
@@ -26,39 +26,25 @@ class SignInFragment : Fragment() {
             binding = FragmentSignInBinding.inflate(inflater, container, false)
             databaseHelper = DatabaseHelperRegister(requireContext())
 
-
-            Handler(Looper.getMainLooper()).postDelayed({
-            }, 6000)
-
-            databaseHelper = DatabaseHelperRegister(requireContext())
-
             binding.buttonLogIn.setOnClickListener {
-                binding.loginEmailText.text?.clear()
-                binding.loginPasswordText.text?.clear()
                 val loginEmail = binding.loginEmailText.text.toString()
                 val loginPassword = binding.loginPasswordText.text.toString()
                 signInDatabase(loginEmail, loginPassword)
             }
-
             return binding.root
         }
 
     private  fun signInDatabase(email:String , password:String){
-
         val userExists=databaseHelper.readUser(email,password)
-
-        if(userExists)
-        {
+        if(userExists){
             Toast.makeText(requireContext(),"SignIn Successful ",Toast.LENGTH_SHORT).show()
             // navigation to home fragment
+            val intent = Intent(requireContext(), MainActivity::class.java)
+            requireActivity().startActivity(intent)
+            requireActivity().finish()
         }
-        else
-        {
+        else {
             Toast.makeText(requireContext(),"SignIn Failed ",Toast.LENGTH_SHORT).show()
-
         }
-
     }
-
-
 }

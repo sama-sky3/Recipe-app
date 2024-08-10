@@ -1,5 +1,6 @@
 package com.example.recipeappproject
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
@@ -53,12 +54,14 @@ class MainActivity : AppCompatActivity() {
 
         when(item.itemId) {
             R.id.sign_out -> {
-                // TODO
+                // TODO cont
+                val intent = Intent(this, AuthActivity::class.java)
+                intent.putExtra("skipSplash", true)
+                startActivity(intent)
+                finish()
                 return true
             }
             R.id.about_us -> {
-                //TODO test
-                navController = findNavController(R.id.nav_host_fragment_activity_main) // replace "nav_host_fragment" with the id of your navHostFragment in activity layout
                 navController.navigate(R.id.aboutUsFragment)
                 return true
             }
