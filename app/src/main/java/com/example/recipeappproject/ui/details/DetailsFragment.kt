@@ -92,7 +92,7 @@ class DetailsFragment : Fragment() {
             favouriteViewModel.getFavouriteMeals(userEmail)
 
             favouriteViewModel.favouriteMeals.observe(viewLifecycleOwner) { meals ->
-                if (meals.isNotEmpty()) {
+                if (meals!=null) {
                     if (meals.contains(meal)) {
                         Log.i("TAG", "onViewCreated: exist ")
                         favBtn.isChecked = true
@@ -120,11 +120,7 @@ class DetailsFragment : Fragment() {
                         }
                     }
                 }
-
             }
-
-
-
         }
 
 

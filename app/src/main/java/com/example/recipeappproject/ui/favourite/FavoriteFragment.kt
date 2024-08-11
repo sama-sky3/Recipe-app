@@ -20,10 +20,11 @@ import com.example.recipeappproject.ui.search.SearchFragmentDirections
 class FavoriteFragment : Fragment() {
     val SETTING_PREFRENCE = "com.example.sharedstorageapplication"
     lateinit var sharedPreferences: SharedPreferences
-lateinit var recyclerView: RecyclerView
+    lateinit var recyclerView: RecyclerView
     private lateinit var myAdapter: FavAdapter
     private lateinit var binding: FragmentFavoriteBinding
     private lateinit var FavMvvm: FavouriteViewModel
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         myAdapter = FavAdapter()
