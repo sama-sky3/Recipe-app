@@ -14,8 +14,6 @@ import androidx.navigation.fragment.findNavController
 import com.example.recipeappproject.MainActivity
 import com.example.recipeappproject.R
 import com.example.recipeappproject.databinding.FragmentSignUpBinding
-import com.example.recipeappproject.viewmodels.RegisterViewModel
-import com.example.recipeappproject.viewmodels.RegisterViewModelFactory
 import com.example.recipeappproject.database.RegisterDatabase
 import com.example.recipeappproject.Repo.RegisterRepository
 

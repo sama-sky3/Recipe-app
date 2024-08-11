@@ -14,9 +14,11 @@ import android.widget.ImageButton
 import android.widget.ImageView
 import android.widget.PopupWindow
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.navArgs
 import com.bumptech.glide.Glide
+import com.example.recipeappproject.MainActivity
 import com.example.recipeappproject.R
 import com.ms.square.android.expandabletextview.ExpandableTextView
 import com.pierfrancescosoffritti.androidyoutubeplayer.core.player.YouTubePlayer
@@ -49,9 +51,10 @@ class DetailsFragment : Fragment() {
         var ytUri: Uri? = null
 
         viewModel.meal.observe(viewLifecycleOwner){
-            Log.i("DetailsFragment","youtube error ${it}")
-                ytUri = Uri.parse(it.strYoutube)
+            ytUri = Uri.parse(it.strYoutube)
 
+            val activity = requireActivity() as AppCompatActivity
+            activity.supportActionBar?.title = it.strMeal
 
             Glide.with(view)
                 .load(it.strMealThumb)

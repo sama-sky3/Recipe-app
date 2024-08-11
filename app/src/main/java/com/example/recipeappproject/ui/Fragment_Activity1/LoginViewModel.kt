@@ -1,4 +1,4 @@
-package com.example.recipeappproject.viewmodels
+package com.example.recipeappproject.ui.Fragment_Activity1
 
 import android.app.Application
 import androidx.lifecycle.AndroidViewModel
@@ -6,7 +6,6 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
 import com.example.recipeappproject.Repo.RegisterRepository
-import com.example.recipeappproject.DataClasses.RegisterEntity
 import com.example.recipeappproject.database.RegisterDatabase
 import kotlinx.coroutines.launch
 

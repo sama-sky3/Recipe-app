@@ -1,4 +1,4 @@
-package com.example.recipeappproject.viewmodels
+package com.example.recipeappproject.ui.Fragment_Activity1
 
 import android.app.Application
 import androidx.lifecycle.AndroidViewModel

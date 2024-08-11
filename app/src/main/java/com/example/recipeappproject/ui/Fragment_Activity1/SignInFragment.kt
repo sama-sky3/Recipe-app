@@ -10,11 +10,8 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity.MODE_PRIVATE
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
-import androidx.navigation.fragment.findNavController
 import com.example.recipeappproject.MainActivity
 import com.example.recipeappproject.databinding.FragmentSignInBinding
-import com.example.recipeappproject.viewmodels.RegisterViewModel
-import com.example.recipeappproject.viewmodels.RegisterViewModelFactory
 import com.example.recipeappproject.database.RegisterDatabase
 import com.example.recipeappproject.Repo.RegisterRepository
 
