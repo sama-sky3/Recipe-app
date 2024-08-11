@@ -24,10 +24,6 @@ class SearchFragment : Fragment() {
     private lateinit var searchMvvm: SearchViewModel
     lateinit var recyclerView: RecyclerView
 
-    private var mealId = ""
-    private var mealStr = ""
-    private var mealThub = ""
-
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

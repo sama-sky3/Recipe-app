@@ -1,6 +1,8 @@
 package com.example.recipeappproject.ui.details
 
 import android.content.Context
+import android.content.Context.MODE_PRIVATE
+import android.content.SharedPreferences
 import android.net.Uri
 import android.os.Bundle
 import android.util.Log
@@ -16,10 +18,16 @@ import android.widget.PopupWindow
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.ViewModelProvider
+import androidx.lifecycle.ViewModelProviders
 import androidx.navigation.fragment.navArgs
 import com.bumptech.glide.Glide
+import com.example.recipeappproject.DataClasses.Meal
 import com.example.recipeappproject.MainActivity
 import com.example.recipeappproject.R
+import com.example.recipeappproject.Repo.FavouriteRepository
+import com.example.recipeappproject.ui.favourite.FavouriteViewModel
+import com.example.recipeappproject.ui.favourite.FavouriteViewModelFactory
 import com.ms.square.android.expandabletextview.ExpandableTextView
 import com.pierfrancescosoffritti.androidyoutubeplayer.core.player.YouTubePlayer
 import com.pierfrancescosoffritti.androidyoutubeplayer.core.player.listeners.AbstractYouTubePlayerListener
@@ -27,8 +35,11 @@ import com.pierfrancescosoffritti.androidyoutubeplayer.core.player.views.YouTube
 
 
 class DetailsFragment : Fragment() {
-
+    val SETTING_PREFRENCE = "com.example.sharedstorageapplication"
+    lateinit var sharedPreferences: SharedPreferences
+    lateinit var  favouriteViewModel:FavouriteViewModel
     private lateinit var viewModel:DetailsViewModel
+    lateinit var meal: Meal
     private val args by navArgs<DetailsFragmentArgs>()
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -36,13 +47,23 @@ class DetailsFragment : Fragment() {
     ): View? {
         viewModel = DetailsViewModelFactory(args.id).create(DetailsViewModel::class.java)
 
+        val favouriteRepository = FavouriteRepository(requireContext())
+
+        // Create the ViewModelFactory
+        val factory = FavouriteViewModelFactory(favouriteRepository)
+
+        // Get the ViewModel
+        favouriteViewModel = ViewModelProvider(this, factory).get(FavouriteViewModel::class.java)
+
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.details_fragment_view, container, false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
+        sharedPreferences =
+            requireActivity().getSharedPreferences(SETTING_PREFRENCE, MODE_PRIVATE)
+        val userEmail = sharedPreferences.getString("loginEmail", "")
         val expTv: ExpandableTextView = view.findViewById(R.id.expand_text_view)
         val img: ImageView = view.findViewById(R.id.meal_image)
         val playButton: ImageButton = view.findViewById(R.id.button_play_video)
@@ -50,17 +71,44 @@ class DetailsFragment : Fragment() {
 
         var ytUri: Uri? = null
 
+
+
         viewModel.meal.observe(viewLifecycleOwner){
             ytUri = Uri.parse(it.strYoutube)
 
             val activity = requireActivity() as AppCompatActivity
             activity.supportActionBar?.title = it.strMeal
+            meal=it
 
             Glide.with(view)
                 .load(it.strMealThumb)
                 .into(img)
 
             expTv.text =   it.strInstructions
+
+            if(favouriteViewModel.favouriteMeals.value?.contains(meal)==true){
+                Log.i("TAG", "onViewCreated: exist ")
+                favBtn.isChecked=true
+            }
+            else{
+                favBtn.isChecked=false
+                Log.i("TAG", "onViewCreated: not exist ")
+            }
+
+
+
+            favBtn.setOnCheckedChangeListener { _, isChecked ->
+                if (isChecked) {
+                    if(favouriteViewModel.favouriteMeals.value?.contains(meal)==true){
+                        Toast.makeText(requireContext(), "this meal is Already exist", Toast.LENGTH_SHORT).show()
+                    }else{
+                    favouriteViewModel.addMealToFavorites(userEmail!!,meal )
+                    }
+                } else {
+
+                    favouriteViewModel.removeMealFromFavorites(userEmail!!, meal)
+                }
+            }
         }
 
         playButton.setOnClickListener {
@@ -73,10 +121,8 @@ class DetailsFragment : Fragment() {
             createPopUp(youtubeId)
         }
 
-        favBtn.setOnCheckedChangeListener() { _, _ ->
-            // Respond to icon toggle
-            //TODO
-        }
+
+
     }
 
     fun createPopUp (youtubeId:String){
