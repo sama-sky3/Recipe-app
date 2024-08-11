@@ -39,7 +39,7 @@ class DetailsFragment : Fragment() {
     lateinit var sharedPreferences: SharedPreferences
     lateinit var favouriteViewModel: FavouriteViewModel
     private lateinit var viewModel: DetailsViewModel
-    var x: Boolean = false
+    var x: Int = 0
     lateinit var meal: Meal
     private val args by navArgs<DetailsFragmentArgs>()
     override fun onCreateView(
@@ -74,6 +74,8 @@ class DetailsFragment : Fragment() {
 
 
 
+
+
         viewModel.meal.observe(viewLifecycleOwner) {
             ytUri = Uri.parse(it.strYoutube)
 
@@ -87,31 +89,44 @@ class DetailsFragment : Fragment() {
 
             expTv.text = it.strInstructions
 
-            favBtn.setOnCheckedChangeListener { _, isChecked ->
-                if (isChecked) {
+            favouriteViewModel.getFavouriteMeals(userEmail)
 
-                    favouriteViewModel.addMealToFavorites(userEmail!!, meal)
+            favouriteViewModel.favouriteMeals.observe(viewLifecycleOwner) { meals ->
+                if (meals.isNotEmpty()) {
+                    if (meals.contains(meal)) {
+                        Log.i("TAG", "onViewCreated: exist ")
+                        favBtn.isChecked = true
+                        x=1
 
-                } else {
-
-                    favouriteViewModel.removeMealFromFavorites(userEmail!!, meal)
+                    } else {
+                        favBtn.isChecked = false
+                        Log.i("TAG", "onViewCreated: not exist ")
+                    }
                 }
+
+                favBtn.setOnCheckedChangeListener { _, isChecked ->
+                    if (isChecked==true) {
+
+                        if (x!=1) {
+                            Log.i("TAGsss", "onViewCreated: exist ")
+                            favouriteViewModel.addMealToFavorites(userEmail!!, meal)
+                            x = 1
+                        }
+                    } else {
+                        if(x==1) {
+                            favouriteViewModel.removeMealFromFavorites(userEmail!!, meal)
+                            x=0
+
+                        }
+                    }
+                }
+
             }
 
-        favouriteViewModel.getFavouriteMeals(userEmail)
 
-        favouriteViewModel.favouriteMeals.observe(viewLifecycleOwner) { meals ->
-            if (meals.isNotEmpty()) {
-                if (meals.contains(meal)) {
-                    Log.i("TAG", "onViewCreated: exist ")
-                    favBtn.isChecked = true
 
-                } else {
-                    favBtn.isChecked = false
-                    Log.i("TAG", "onViewCreated: not exist ")
-                }
-            } }
         }
+
 
 
 
