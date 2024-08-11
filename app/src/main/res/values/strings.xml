@@ -33,4 +33,9 @@
     <string name="sama_ahmed">Sama Ahmed</string>
     <string name="menna_samy">Menna Samy</string>
     <string name="_2024_akla_saree3a">© 2024 AKla Saree3a</string>
+    <string name="video_player_button">video player button</string>
+    <string name="scroll_to_see_more">scroll to see more</string>
+    <string name="click_to_show_video">click to show video</string>
+    <string name="favorite">add to favourites</string>
+    <string name="play_video">Play video\n</string>
 </resources>

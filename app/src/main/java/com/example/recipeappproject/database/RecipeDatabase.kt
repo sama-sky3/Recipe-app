@@ -8,19 +8,22 @@ import com.example.recipeappproject.dao.RecipeDao
 import com.example.recipeappproject.entities.Recipes
 
 @Database(entities = [Recipes::class], version = 1, exportSchema = false)
-abstract class RecipeDatabase:RoomDatabase() {
+abstract class RecipeDatabase : RoomDatabase() {
 
-    companion object{
-        private var recipesDatabase: RecipeDatabase?=null
+    companion object {
+        private var recipesDatabase: RecipeDatabase? = null
+
         @Synchronized
-        fun getDatabase(context:Context): RecipeDatabase {
-            if(recipesDatabase != null)
-            {
-                recipesDatabase = Room.databaseBuilder(context, RecipeDatabase::class.java,
-                    name = "recipe.dp").build()
+        fun getDatabase(context: Context): RecipeDatabase {
+            if (recipesDatabase != null) {
+                recipesDatabase = Room.databaseBuilder(
+                    context, RecipeDatabase::class.java,
+                    name = "recipe.dp"
+                ).build()
             }
             return recipesDatabase!!
         }
     }
+
     abstract fun recipeDao(): RecipeDao
 }

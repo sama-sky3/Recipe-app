@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:expandableTextView="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@drawable/background"
+    android:layout_marginBottom="?attr/actionBarSize"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/root_view"
+        android:paddingTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/meal_image"
+            android:layout_width="300dp"
+            android:layout_height="300dp"
+            android:layout_margin="10dp"
+            tools:src="@drawable/image"
+            expandableTextView:layout_constraintEnd_toEndOf="parent"
+            expandableTextView:layout_constraintStart_toStartOf="parent"
+            expandableTextView:layout_constraintTop_toTopOf="parent"
+            tools:ignore="ContentDescription" />
+
+        <!-- ExpandableTextView Container -->
+        <com.ms.square.android.expandabletextview.ExpandableTextView
+            android:id="@+id/expand_text_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="30dp"
+            expandableTextView:animDuration="500"
+            expandableTextView:layout_constraintEnd_toEndOf="parent"
+            expandableTextView:layout_constraintStart_toStartOf="parent"
+            expandableTextView:layout_constraintTop_toBottomOf="@+id/buttons_layout"
+            expandableTextView:maxCollapsedLines="5">
+
+            <!-- simple text view -->
+            <TextView
+                android:id="@id/expandable_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:textColor="#666666"
+                android:textSize="16sp" />
+
+            <!-- expandable ImageButton -->
+            <ImageButton
+                android:id="@id/expand_collapse"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end|bottom"
+                android:background="@android:color/transparent"
+                android:contentDescription="@string/click_to_show_video" />
+
+        </com.ms.square.android.expandabletextview.ExpandableTextView>
+
+        <!-- Buttons Layout (Favorite and Play) -->
+        <LinearLayout
+            android:id="@+id/buttons_layout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="10dp"
+            android:orientation="horizontal"
+            expandableTextView:layout_constraintEnd_toEndOf="parent"
+            expandableTextView:layout_constraintTop_toBottomOf="@id/meal_image">
+
+            <CheckBox
+                android:id="@+id/icon"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:button="@drawable/sl_favourite_24dp"
+                expandableTextView:buttonTint="@color/Orange_300" />
+
+            <!-- Play Video Button -->
+            <ImageButton
+                android:id="@+id/button_play_video"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:background="@android:color/transparent"
+                android:contentDescription="@string/play_video"
+                android:src="@android:drawable/ic_media_play"
+                expandableTextView:tint="@color/Orange_300" />
+        </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

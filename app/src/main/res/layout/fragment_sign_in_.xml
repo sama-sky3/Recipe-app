@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/background"
-    tools:context=".ui.Fragment_Activity1.SignInFragment" >
+    tools:context=".ui.Fragment_Activity1.SignInFragment">
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/login_email_layout"
@@ -24,9 +24,9 @@
         android:backgroundTint="@color/lightOrange"
         android:drawableStart="@drawable/baseline_email_24"
         android:drawablePadding="10dp"
-        android:paddingHorizontal="20dp"
         android:hint="@string/Email"
         android:inputType="textEmailAddress"
+        android:paddingHorizontal="20dp"
         android:textColor="@color/brown"
         android:textSize="20sp"
         android:textStyle="bold"
@@ -51,11 +51,11 @@
         android:layout_height="67dp"
         android:layout_marginTop="40dp"
         android:backgroundTint="@color/lightOrange"
-        android:drawablePadding="10dp"
-        android:paddingHorizontal="20dp"
         android:drawableStart="@drawable/baseline_password_24"
+        android:drawablePadding="10dp"
         android:hint="@string/password"
         android:inputType="textPassword"
+        android:paddingHorizontal="20dp"
         android:textColor="@color/brown"
         android:textSize="20sp"
         android:textStyle="bold"
@@ -88,7 +88,6 @@
         app:layout_constraintTop_toTopOf="parent"
         app:lottie_autoPlay="true"
         app:lottie_loop="true"
-        app:lottie_rawRes="@raw/orange"
-        />
+        app:lottie_rawRes="@raw/orange" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

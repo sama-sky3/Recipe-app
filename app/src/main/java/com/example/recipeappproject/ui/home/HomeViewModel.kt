@@ -1,13 +1,14 @@
 package com.example.recipeappproject.ui.home
 
 import android.util.Log
-import androidx.lifecycle.*
-import com.example.recipeappproject.DataClasses.*
+import androidx.lifecycle.LiveData
+import androidx.lifecycle.MutableLiveData
+import androidx.lifecycle.ViewModel
+import androidx.lifecycle.viewModelScope
+import com.example.recipeappproject.DataClasses.Category
+import com.example.recipeappproject.DataClasses.MealsByCategory
 import com.example.recipeappproject.Retrofit.RetrofitInstance
-import retrofit2.Call
-import retrofit2.Callback
-import retrofit2.Response
-
+import kotlinx.coroutines.launch
 
 
 class HomeViewModel : ViewModel() {
@@ -16,47 +17,35 @@ class HomeViewModel : ViewModel() {
 
     init {
         getAllCategories()
-
     }
 
-     fun getAllCategories() {
-        RetrofitInstance.api.getCategories().enqueue(object : Callback<CategoryList> {
-            override fun onResponse(call: Call<CategoryList>, response: Response<CategoryList>) {
-                response.body()?.let { CategoryList ->
-                    mutableCategory.postValue(CategoryList.categories)
-                }
-
+    fun getAllCategories() {
+        viewModelScope.launch {
+            try {
+                val categoryList = RetrofitInstance.api.getCategories()
+                mutableCategory.value = categoryList.categories
+            } catch (e: Exception) {
+                Log.e("HomeViewModel", "failed to get categories", e)
             }
-
-            override fun onFailure(call: Call<CategoryList>, t: Throwable) {
-                Log.d("Home View Model Categories", t.message.toString())
-            }
-        })
+        }
     }
+
     fun observeCategories(): LiveData<List<Category>> {
         return mutableCategory
     }
 
-    fun getMealsByCategory(category:String){
-        RetrofitInstance.api.getMealsByCategory(category).enqueue(object : Callback<MealsByCategoryList>{
-            override fun onResponse(call: Call<MealsByCategoryList>, response: Response<MealsByCategoryList>) {
-                if (response.isSuccessful) {
-                    val mealsList = response.body()
-                    Log.d("HomeViewModel", "Meals for $category: ${mealsList?.meals}")
-                    mutableMeal.postValue(mealsList?.meals)
-                } else {
-                    Log.d("HomeViewModel", "Failed to get meals: ${response.errorBody()?.string()}")
-                }
+    fun getMealsByCategory(category: String) {
+        viewModelScope.launch {
+            try {
+                val mealsByCategory = RetrofitInstance.api.getMealsByCategory(category)
+                mutableMeal.value = mealsByCategory.meals
+            } catch (e: Exception) {
+                Log.e("HomeViewModel", "Failed to get meals", e)
             }
-
-            override fun onFailure(call: Call<MealsByCategoryList>, t: Throwable) {
-                Log.d("Home View Model Recipes",t.message.toString())
-            }
-
-        })
+        }
     }
 
-    fun observeMeal():LiveData<List<MealsByCategory>>{
+    fun observeMeal(): LiveData<List<MealsByCategory>> {
         return mutableMeal
     }
 }

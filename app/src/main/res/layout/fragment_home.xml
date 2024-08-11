@@ -5,65 +5,57 @@
     android:id="@+id/frameLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/white"
+    android:background="@drawable/background"
     tools:context=".ui.home.HomeFragment">
 
 
-        <ScrollView
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scrollbars="none">
+
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:scrollbars="none">
-            <LinearLayout
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_24"
+                android:fontFamily="@font/abril_fatface"
+                android:padding="@dimen/_10"
+                android:text="@string/all_categories"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_30" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/mainCateg"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical">
+                android:orientation="horizontal"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                tools:itemCount="1"
+                tools:listitem="@layout/home_categories" />
 
+            <TextView
+                android:id="@+id/tvCateg"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/abril_fatface"
+                android:padding="@dimen/_10"
+                android:text="@string/category_name"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_30" />
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/_24"
-                    android:fontFamily="@font/abril_fatface"
-                    android:padding="@dimen/_10"
-                    android:text="@string/all_categories"
-                    android:textColor="@color/black"
-                    android:textSize="@dimen/_30" />
-
-                <androidx.recyclerview.widget.RecyclerView
-                    android:id="@+id/mainCateg"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    tools:itemCount="1"
-                    android:orientation="horizontal"
-                    tools:listitem="@layout/home_categories"
-                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-                    />
-
-                <TextView
-                    android:id="@+id/tvCateg"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="@font/abril_fatface"
-                    android:padding="@dimen/_10"
-                    android:text="@string/category_name"
-                    android:textColor="@color/black"
-                    android:textSize="@dimen/_30" />
-
-                <androidx.recyclerview.widget.RecyclerView
-                    android:id="@+id/subCateg"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    tools:itemCount="1"
-                    android:orientation="horizontal"
-                    tools:listitem="@layout/home_recipes"
-                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-
-                    />
-
-
-            </LinearLayout>
-
-
-        </ScrollView>
-
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/subCateg"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                tools:itemCount="1"
+                tools:listitem="@layout/home_recipes" />
+        </LinearLayout>
+    </ScrollView>
 </RelativeLayout>

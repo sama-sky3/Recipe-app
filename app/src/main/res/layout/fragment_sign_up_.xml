@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/background"
-    tools:context=".ui.Fragment_Activity1.SignUpFragment" >
+    tools:context=".ui.Fragment_Activity1.SignUpFragment">
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/text_email_layout"
@@ -26,10 +25,10 @@
         android:layout_marginEnd="4dp"
         android:backgroundTint="#D76106"
         android:drawableStart="@drawable/baseline_email_24"
-        android:hint="@string/Email"
         android:drawablePadding="10dp"
-        android:paddingHorizontal="20dp"
+        android:hint="@string/Email"
         android:inputType="textEmailAddress"
+        android:paddingHorizontal="20dp"
         android:textColor="@color/brown"
         android:textSize="20sp"
         android:textStyle="bold"
@@ -55,9 +54,10 @@
         android:layout_marginTop="224dp"
         android:backgroundTint="#B5340B"
         android:drawableStart="@drawable/baseline_person_outline_24"
-        android:hint="@string/username"
         android:drawablePadding="10dp"
-        android:paddingHorizontal="20dp"        android:inputType="textPersonName"
+        android:hint="@string/username"
+        android:inputType="textPersonName"
+        android:paddingHorizontal="20dp"
         android:password="false"
         android:textColor="@color/brown"
         android:textSize="20sp"
@@ -67,13 +67,13 @@
         app:layout_constraintTop_toTopOf="parent"
         tools:ignore="Deprecated" />
 
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/text_password_layout"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/text_password_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -84,11 +84,11 @@
         android:layout_marginTop="364dp"
         android:backgroundTint="#D76106"
         android:drawableStart="@drawable/baseline_password_24"
-        android:forceHasOverlappingRendering="false"
         android:drawablePadding="10dp"
-        android:paddingHorizontal="20dp"
+        android:forceHasOverlappingRendering="false"
         android:hint="@string/password"
         android:inputType="textPassword"
+        android:paddingHorizontal="20dp"
         android:password="true"
         android:scrollbarAlwaysDrawHorizontalTrack="false"
         android:textColor="@color/brown"
@@ -128,8 +128,7 @@
         app:cornerRadius="10dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button_signup"
-       />
+        app:layout_constraintTop_toBottomOf="@+id/button_signup" />
 
     <com.airbnb.lottie.LottieAnimationView
         android:id="@+id/lottie_signup"
@@ -141,6 +140,5 @@
         app:layout_constraintTop_toTopOf="parent"
         app:lottie_autoPlay="true"
         app:lottie_loop="true"
-        app:lottie_rawRes="@raw/orange"
-        />
+        app:lottie_rawRes="@raw/orange" />
 </androidx.constraintlayout.widget.ConstraintLayout>

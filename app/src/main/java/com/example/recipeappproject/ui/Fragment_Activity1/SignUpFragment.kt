@@ -3,8 +3,6 @@ package com.example.recipeappproject.ui.Fragment_Activity1
 import android.content.Intent
 import android.content.SharedPreferences
 import android.os.Bundle
-import android.os.Handler
-import android.os.Looper
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -22,7 +20,7 @@ import com.example.recipeappproject.registerDatabaseHelper.DatabaseHelperRegiste
 class SignUpFragment : Fragment() {
 
     val SETTING_PREFRENCE = "com.example.sharedstorageapplication"
-    lateinit var editor : SharedPreferences.Editor
+    lateinit var editor: SharedPreferences.Editor
     lateinit var sharedPreferences: SharedPreferences
     private lateinit var navController: NavController
     private lateinit var binding: FragmentSignUpBinding
@@ -56,8 +54,9 @@ class SignUpFragment : Fragment() {
             navController.navigate(R.id.action_sign_up_Fragment_to_sign_in_Fragment)
         }
     }
+
     private fun signupDatabase(username: String, email: String, password: String) {
-        if(username == "" || email == "" || password == ""){
+        if (username == "" || email == "" || password == "") {
             Toast.makeText(requireContext(), "Enter the missing fields", Toast.LENGTH_LONG).show()
             return
         }
@@ -67,12 +66,13 @@ class SignUpFragment : Fragment() {
             // Navigate to the home fragment
             val intent = Intent(requireContext(), MainActivity::class.java)
 
-            sharedPreferences = requireActivity().getSharedPreferences(SETTING_PREFRENCE,
+            sharedPreferences = requireActivity().getSharedPreferences(
+                SETTING_PREFRENCE,
                 MODE_PRIVATE
             )
             with(sharedPreferences.edit()) {
-                putString("loginEmail", email )
-                putString("loginPassword", password )
+                putString("loginEmail", email)
+                putString("loginPassword", password)
                 apply()
 
             }

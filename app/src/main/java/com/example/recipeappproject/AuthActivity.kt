@@ -1,6 +1,5 @@
 package com.example.recipeappproject
 
-import android.content.Intent
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
@@ -23,10 +22,12 @@ class AuthActivity : AppCompatActivity() {
         }
 
         // nav controller
-        val navHostFragment = supportFragmentManager.findFragmentById(R.id.authentication_nav_host) as NavHostFragment //nav host is the fragment container view main layout
+        val navHostFragment =
+            supportFragmentManager.findFragmentById(R.id.authentication_nav_host) as NavHostFragment //nav host is the fragment container view main layout
         navController = navHostFragment.navController
     }
+
     override fun onSupportNavigateUp(): Boolean {
-        return navController.navigateUp()||super.onSupportNavigateUp()
+        return navController.navigateUp() || super.onSupportNavigateUp()
     }
 }
