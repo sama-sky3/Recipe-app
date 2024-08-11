@@ -33,13 +33,6 @@ class FavouriteViewModel(private val repository: FavouriteRepository) : ViewMode
             getFavouriteMeals(userEmail)
         }
     }
-//    fun getFavouriteMeals(userEmail: String) : List<Meal>? {
-//        var result : List<Meal>?= listOf()
-//        viewModelScope.async {
-//           result=repository.getFavouriteMeals(userEmail)
-//      _favouriteMeals.value = result!!
-//        }
-//        return result
-//    }
+
 
 }

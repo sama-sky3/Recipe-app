@@ -64,8 +64,6 @@ lateinit var recyclerView: RecyclerView
             }
         }
         myAdapter.setOnFavoriteMealClickListener(object : FavAdapter.OnFavoriteClickListener {
-
-
             override fun onFavoriteClick(meal: Meal) {
                 var action =  FavoriteFragmentDirections.actionNavigationFavouriteToDetailsFragment(meal.idMeal)
                 findNavController().navigate(action)

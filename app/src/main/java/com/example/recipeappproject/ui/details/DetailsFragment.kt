@@ -37,8 +37,9 @@ import com.pierfrancescosoffritti.androidyoutubeplayer.core.player.views.YouTube
 class DetailsFragment : Fragment() {
     val SETTING_PREFRENCE = "com.example.sharedstorageapplication"
     lateinit var sharedPreferences: SharedPreferences
-    lateinit var  favouriteViewModel:FavouriteViewModel
-    private lateinit var viewModel:DetailsViewModel
+    lateinit var favouriteViewModel: FavouriteViewModel
+    private lateinit var viewModel: DetailsViewModel
+    var x: Boolean = false
     lateinit var meal: Meal
     private val args by navArgs<DetailsFragmentArgs>()
     override fun onCreateView(
@@ -73,48 +74,53 @@ class DetailsFragment : Fragment() {
 
 
 
-        viewModel.meal.observe(viewLifecycleOwner){
+        viewModel.meal.observe(viewLifecycleOwner) {
             ytUri = Uri.parse(it.strYoutube)
 
             val activity = requireActivity() as AppCompatActivity
             activity.supportActionBar?.title = it.strMeal
-            meal=it
+            meal = it
 
             Glide.with(view)
                 .load(it.strMealThumb)
                 .into(img)
 
-            expTv.text =   it.strInstructions
-
-            if(favouriteViewModel.favouriteMeals.value?.contains(meal)==true){
-                Log.i("TAG", "onViewCreated: exist ")
-                favBtn.isChecked=true
-            }
-            else{
-                favBtn.isChecked=false
-                Log.i("TAG", "onViewCreated: not exist ")
-            }
-
-
+            expTv.text = it.strInstructions
 
             favBtn.setOnCheckedChangeListener { _, isChecked ->
                 if (isChecked) {
-                    if(favouriteViewModel.favouriteMeals.value?.contains(meal)==true){
-                        Toast.makeText(requireContext(), "this meal is Already exist", Toast.LENGTH_SHORT).show()
-                    }else{
-                    favouriteViewModel.addMealToFavorites(userEmail!!,meal )
-                    }
+
+                    favouriteViewModel.addMealToFavorites(userEmail!!, meal)
+
                 } else {
 
                     favouriteViewModel.removeMealFromFavorites(userEmail!!, meal)
                 }
             }
+
+        favouriteViewModel.getFavouriteMeals(userEmail)
+
+        favouriteViewModel.favouriteMeals.observe(viewLifecycleOwner) { meals ->
+            if (meals.isNotEmpty()) {
+                if (meals.contains(meal)) {
+                    Log.i("TAG", "onViewCreated: exist ")
+                    favBtn.isChecked = true
+
+                } else {
+                    favBtn.isChecked = false
+                    Log.i("TAG", "onViewCreated: not exist ")
+                }
+            } }
         }
+
+
+
+
 
         playButton.setOnClickListener {
             val youtubeId = ytUri?.getQueryParameter("v")
 
-            if( youtubeId == null) {
+            if (youtubeId == null) {
                 Toast.makeText(requireContext(), "video id loading", Toast.LENGTH_LONG).show()
                 return@setOnClickListener
             }
@@ -122,10 +128,9 @@ class DetailsFragment : Fragment() {
         }
 
 
-
     }
 
-    fun createPopUp (youtubeId:String){
+    fun createPopUp(youtubeId: String) {
         // Inflate the video view layout
         val inflater: LayoutInflater =
             requireContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater
